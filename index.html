@@ -781,7 +781,23 @@
       font-style: italic;
       color: var(--text-faint);
     }
-    .footer-mono {
+    .footer-telegram {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      color: var(--warm);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .footer-telegram:hover {
+      color: var(--text);
+      border-color: var(--text-dim);
+    }
       font-family: var(--mono);
       font-size: 0.65rem;
       letter-spacing: 0.1em;
@@ -1291,8 +1307,13 @@
 
   <!-- FOOTER -->
   <footer>
-    <p class="footer-sig">Jinshi — Archive, © 2025</p>
-    <p class="footer-mono">portfolio.zoomfrez.xyz</p>
+    <p class="footer-sig">Jinshi — Archive, © 2026</p>
+    <a href="https://t.me/Zoomfrez" target="_blank" class="footer-telegram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8l-1.69 7.96c-.12.56-.46.7-.93.43l-2.57-1.89-1.24 1.19c-.14.14-.25.25-.51.25l.18-2.61 4.74-4.28c.21-.18-.04-.28-.32-.1L7.46 14.5l-2.52-.79c-.55-.17-.56-.55.11-.81l9.86-3.8c.46-.17.86.11.73.7z" fill="currentColor"/>
+      </svg>
+      Contact via Telegram for support and inquiries
+    </a>
   </footer>
 
   <script>
