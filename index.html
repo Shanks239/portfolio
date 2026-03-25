@@ -171,6 +171,23 @@
       .nav-hamburger { display: flex; }
     }
 
+    .hero-bg-hanzi {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--serif);
+      font-size: clamp(160px, 30vw, 380px);
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(201,151,90,0.06);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+      letter-spacing: 0.15em;
+      animation: fadeIn 2.5s ease forwards 0.6s;
+      opacity: 0;
+    }
+
     /* HERO */
     .hero {
       min-height: 100vh;
@@ -909,7 +926,9 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-bg-gradient"></div>
-    <div class="hero-year">© 2025</div>
+    <div class="hero-year">© 2026</div>
+
+    <div class="hero-bg-hanzi">進士</div>
 
     <p class="hero-index">[ Archive — Portfolio ]</p>
     <h1 class="hero-name">Jin<em>shi.</em></h1>
