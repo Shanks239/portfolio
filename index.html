@@ -11,17 +11,17 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #0d0c0a;
-      --bg2: #131210;
-      --bg3: #1a1815;
-      --warm: #c9975a;
-      --warm-dim: #8a6340;
-      --warm-glow: rgba(201,151,90,0.12);
-      --warm-glow2: rgba(201,151,90,0.06);
-      --text: #e8e0d4;
-      --text-dim: #9a9080;
-      --text-faint: #4a4540;
-      --border: rgba(201,151,90,0.15);
+      --bg: #121110;
+      --bg2: #181614;
+      --bg3: #201e1b;
+      --warm: #B87355;
+      --warm-dim: #7a4e38;
+      --warm-glow: rgba(184,115,85,0.12);
+      --warm-glow2: rgba(184,115,85,0.06);
+      --text: #e6ddd4;
+      --text-dim: #8a8078;
+      --text-faint: #464038;
+      --border: rgba(184,115,85,0.15);
       --border-dim: rgba(255,255,255,0.05);
       --serif: 'Cormorant Garamond', Georgia, serif;
       --mono: 'IBM Plex Mono', monospace;
@@ -32,6 +32,13 @@
 
     body {
       background: var(--bg);
+      background-image: repeating-linear-gradient(
+        to right,
+        rgba(184,115,85,0.03) 0px,
+        rgba(184,115,85,0.03) 1px,
+        transparent 1px,
+        transparent 18px
+      );
       color: var(--text);
       font-family: var(--sans);
       font-weight: 300;
@@ -55,7 +62,7 @@
     .cursor-ring {
       position: fixed;
       width: 32px; height: 32px;
-      border: 1px solid rgba(201,151,90,0.4);
+      border: 1px solid rgba(184,115,85,0.4);
       border-radius: 50%;
       pointer-events: none;
       z-index: 9998;
@@ -88,7 +95,7 @@
       padding: 24px 48px;
       display: flex; align-items: center; justify-content: space-between;
       border-bottom: 1px solid var(--border-dim);
-      background: linear-gradient(to bottom, rgba(13,12,10,0.95) 0%, transparent 100%);
+      background: linear-gradient(to bottom, rgba(18,17,16,0.95) 0%, transparent 100%);
       backdrop-filter: blur(8px);
     }
     .nav-logo {
@@ -141,7 +148,7 @@
     .nav-dropdown {
       position: fixed;
       top: 0; left: 0; right: 0;
-      background: rgba(13,12,10,0.99);
+      background: rgba(18,17,16,0.99);
       backdrop-filter: blur(16px);
       z-index: 99;
       padding: 80px 32px 36px;
@@ -179,7 +186,7 @@
       font-family: var(--serif);
       font-size: clamp(160px, 30vw, 380px);
       color: transparent;
-      -webkit-text-stroke: 1px rgba(201,151,90,0.06);
+      -webkit-text-stroke: 1px rgba(184,115,85,0.06);
       line-height: 1;
       pointer-events: none;
       user-select: none;
@@ -200,8 +207,8 @@
     .hero-bg-gradient {
       position: absolute; inset: 0;
       background:
-        radial-gradient(ellipse 60% 50% at 80% 20%, rgba(201,151,90,0.08) 0%, transparent 60%),
-        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(201,151,90,0.05) 0%, transparent 50%),
+        radial-gradient(ellipse 60% 50% at 80% 20%, rgba(184,115,85,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(184,115,85,0.05) 0%, transparent 50%),
         radial-gradient(ellipse 80% 40% at 50% 100%, rgba(201,151,90,0.04) 0%, transparent 60%);
       pointer-events: none;
     }
