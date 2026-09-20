@@ -4,11 +4,11 @@
 
 This is a static website with no build step. The existing Vercel project is connected to `Shanks239/portfolio`; production updates come from `main`.
 
-- Serve the repository root.
+- Keep the Vercel project root at the repository root. `vercel.json` selects `public/` as the output directory.
 - Use the **Other** framework preset if configuring a new project.
-- Leave the build command empty. No compiled output directory is needed.
-- `assets/` must deploy alongside `index.html`.
-- Node.js and Prettier are only used for local development and formatting.
+- Build and install commands are empty; the site is ready to serve without compilation.
+- `public/assets/` deploys alongside `public/index.html`; public URLs stay `/assets/...` and `/`.
+- Node.js and Prettier live under `tooling/` and are only used for local development and formatting. Documentation and tooling are outside the published directory.
 
 After deployment, check the homepage, project dialogs, writing filters, motion controls, and the browser console. Confirm that the CSS, JavaScript modules, favicon, and social sharing image load successfully.
 

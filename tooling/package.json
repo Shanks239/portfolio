@@ -1,0 +1,15 @@
+{
+  "name": "jinshi-observatory",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Jinshi / Zoomfrez personal portfolio",
+  "scripts": {
+    "dev": "python3 -m http.server 8766 --bind 127.0.0.1 --directory ../public",
+    "format": "prettier --config .prettierrc.json --ignore-path .prettierignore --write ..",
+    "format:check": "prettier --config .prettierrc.json --ignore-path .prettierignore --check .."
+  },
+  "devDependencies": {
+    "prettier": "3.9.8"
+  }
+}
