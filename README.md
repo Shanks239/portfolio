@@ -1,29 +1,78 @@
 # Jinshi — The Observatory
 
-A static portfolio for Jinshi / Zoomfrez, using the original charcoal, gold, and cream palette. The engineering map connects five disciplines to six projects; projects open in local detail panels so external demos are optional.
+A personal portfolio for **Jinshi / Zoomfrez**: engineering projects, creative experiments, and writing connected by an interactive observatory.
 
-## Preview locally
+**Live site:** [zoomfrez.xyz](https://zoomfrez.xyz/)
 
-Run `python3 -m http.server 8765` in this folder, then open `http://127.0.0.1:8765`.
+## Features
 
-There is no build step, package install, API key, or application backend. Fonts load from Google Fonts, with system fallbacks. External project links may require their own running services.
+- Five engineering disciplines connected to six project overviews.
+- Animated event horizon and reversible singularity mode.
+- Project notes that work without live demo APIs.
+- Filterable writing, recognition, and contact links.
+- Responsive layout, keyboard-accessible dialogs, and reduced-motion support.
 
-## Files
+## Repository structure
 
-- `index.html`: all page content and the embedded project data used by the detail panels.
-- `styles.css`: responsive layouts, original palette, orbital illustration, and reduced-motion support.
-- `script.js`: discipline selection, project dialogs, filtering, writing expansion, and motion controls.
-- `favicon.svg`, `preview.jpg`: site identity and social preview assets. The social preview image is retained from the original portfolio.
-- `robots.txt`, `sitemap.xml`: search metadata for `https://zoomfrez.xyz/`.
+```text
+portfolio/
+├── index.html                 # Page structure and static content
+├── assets/
+│   ├── css/
+│   │   └── main.css           # Layout, colors, and animation
+│   ├── js/
+│   │   ├── main.js            # Interactions and accessibility
+│   │   └── projects.js        # Project details and illustrations
+│   ├── icons/
+│   │   └── favicon.svg
+│   └── images/
+│       └── preview.jpg        # Social sharing image
+├── docs/
+│   └── deployment.md         # Hosting and domain setup
+├── robots.txt
+├── sitemap.xml
+├── package.json              # Development commands
+└── README.md
+```
 
-When editing a project, update both its card content and its record in the `project-data` block. Update the corresponding discipline mapping in `script.js` if its classification changes. Writing and recognition links are normal HTML links.
+## Local preview
 
-## Deployment and domain
+The site is plain HTML, CSS, and JavaScript. It has no build step or API credentials.
 
-Deploy these files from the existing Vercel project as a static site. No build command is required. Connect `zoomfrez.xyz` to Production in Vercel, add the exact DNS record provided by Vercel in Cloudflare, and verify HTTPS. Only then redirect `portfolio.zoomfrez.xyz` to `zoomfrez.xyz`.
+```sh
+python3 -m http.server 8766 --bind 127.0.0.1
+```
 
-The canonical URL, Open Graph URL, Twitter image URL, sitemap, and robots file already target the root domain. Changing these files does not itself configure DNS or publish the site.
+Open [localhost:8766](http://localhost:8766). Serve the folder over HTTP rather than opening `index.html` directly, because the scripts use JavaScript modules.
 
-## Content boundaries
+With Node.js installed, `npm run dev` starts the same preview server.
 
-Project descriptions, technology labels, writing, and recognition are based on the original portfolio. Runtime availability and individual project implementations have not been independently audited. No project screenshots, performance claims, or technical architecture have been invented.
+## Formatting
+
+Install the development formatter once:
+
+```sh
+npm ci
+```
+
+Then use:
+
+```sh
+npm run format
+npm run format:check
+```
+
+Formatting rules live in `.prettierrc.json`. Prettier is a development tool only; the deployed site has no runtime package dependencies.
+
+## Editing content
+
+- **Page copy, project cards, writing, recognition:** edit `index.html`.
+- **Project detail panels:** edit `assets/js/projects.js`. Keep the project ID, title, and technology labels consistent with its card in `index.html`.
+- **Engineering categories and interactions:** edit `assets/js/main.js`.
+- **Visual design:** edit `assets/css/main.css`.
+
+Google Fonts loads with system-font fallbacks. Project descriptions and technology labels are based on the original portfolio. External demos may be offline while their API services are disconnected.
+
+## Deployment
+
+Vercel serves the repository root as a static website. See [deployment and domains](docs/deployment.md). The existing social sharing image is retained from the original portfolio.
